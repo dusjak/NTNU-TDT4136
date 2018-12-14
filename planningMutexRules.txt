@@ -1,0 +1,36 @@
+## Action mutex ##
+Inconsistent Effects: the effect of one action is the negation of another action's effect.
+	If the effect of one action is the negation of the 
+	effect of another, then those two actions are mutex. So if one
+	action causes P to be true and another action causes P to be false, 
+	you can't execute them both at the same time. 
+ 
+Interference: one action deletes a precondition of another.
+	If one action deletes the preconditions of another 
+	– then that’s also a case where you can't execute 
+	the two actions at the same time. Because remember, 
+	we said that when we had one of these plans that had 
+	two action steps at the same point in time, our 
+	assumption was that you could linearize them in either 
+	order, and clearly, if one deletes a precondition
+	of the other then you can't linearize them in any order, so that's not OK. 
+
+Competing Needs: One (or more) of the precondictions to an action are mutex with an precondition of another action.
+	If two actions have preconditions that
+	are mutually exclusive at the previous level, 
+	then the actions are mutex. So one thing that 
+	can make actions mutually exclusive is essentially if their
+	preconditions can't possibly both be satisfied during this 
+	time step, then there's no way you could execute these two 
+	actions now at the next time step. 
+
+## State mutex ##
+Negation: One state is the negation of another.
+	We're going to say two propositions at 
+	level I are mutex if they're negations of one
+	another. It's pretty clear you can't have 
+	P and !P true in the same step.
+
+Inconsistent support: All actions leading to the states are mutex.
+	If all the ways of achieving a proposition at the 
+	previous level are pair-wise mutually exclusive. 
